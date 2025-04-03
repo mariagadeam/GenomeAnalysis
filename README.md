@@ -1,1 +1,1 @@
-# RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant Enterococcus faecium during growth in human serum
+# RNA-seq and Tn-seq reveal fitness determinants of vancomycin-resistant _Enterococcus faecium_ during growth in human serum
