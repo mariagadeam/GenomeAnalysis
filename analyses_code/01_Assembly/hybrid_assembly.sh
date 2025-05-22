@@ -16,7 +16,6 @@ NANOPORE_DIR="/proj/uppmax2025-3-3/Genome_Analysis/1_Zhang_2017/genomics_data/Na
 OUTPUT_DIR="../data/01_Assembly/hybrid_assembly"
 mkdir -p ${OUTPUT_DIR}
 
-# Run SPAdes hybrid assembly
 spades.py \
     -o ${OUTPUT_DIR} \
     --pe1-1 ${ILLUMINA_DIR}/forward_paired.fq.gz \

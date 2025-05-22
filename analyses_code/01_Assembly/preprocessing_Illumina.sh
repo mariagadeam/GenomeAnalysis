@@ -20,10 +20,10 @@ OUT_TRIMMED_FASTQC="../data/01_Assembly/filtered_Illumina/fastqc_trimmed"
 ADAPTERS="TruSeq3-PE.fa"  
 mkdir -p $OUT_RAW_FASTQC $OUT_TRIMMED $OUT_TRIMMED_FASTQC
 
-# Run quality check on raw reads with FastQC
+# QUALITY CHECK RAW READS
 fastqc -o $OUT_RAW_FASTQC $RAW_DATA/*.fq.gz
 
-# Process reads with Trimmomatic
+# TRIMMING
 INPUT_FORWARD="$RAW_DATA/E745-1.L500_SZAXPI015146-56_1_clean.fq.gz"
 INPUT_REVERSE="$RAW_DATA/E745-1.L500_SZAXPI015146-56_2_clean.fq.gz"
 
@@ -35,7 +35,7 @@ trimmomatic PE -phred33 \
   ILLUMINACLIP:$ADAPTERS:2:30:7 \
   MINLEN:15
 
-# Run quality check on trimmed reads with FastQC
+# QUALITY CHECK TRIMMED READS
 fastqc -o $OUT_TRIMMED_FASTQC \
   "$OUT_TRIMMED/forward_paired.fq.gz" \
   "$OUT_TRIMMED/reverse_paired.fq.gz"

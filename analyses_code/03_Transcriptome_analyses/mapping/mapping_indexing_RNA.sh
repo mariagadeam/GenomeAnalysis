@@ -17,23 +17,18 @@ module load samtools/1.20
 #BH
 
 REF="/home/mariagad/GenomeAnalysis/data/01_Assembly/pacbio_assembly/efaecium.contigs.fasta"
-
 RAW_DATA="/proj/uppmax2025-3-3/Genome_Analysis/1_Zhang_2017/transcriptomics_data/RNA-Seq_BH/"
-OUT_DIR="/home/mariagad/GenomeAnalysis/data/03_Transcriptome_analyses/mapped_reads/BH"
+OUT_DIR="/proj/uppmax2025-3-3/nobackup/mariagad/03_Transcriptome_analyses/mapped_reads/BH"
 
 mkdir -p "${OUT_DIR}"
 
-# Reference Indexing
+
 bwa index -p "${OUT_DIR}/ref_index" "${REF}" 2> "${OUT_DIR}/index.log"
 
 for  forward_read in ${RAW_DATA}/trim_paired_*_pass_1.fastq.gz; do
         sample=$(basename "${forward_read}" | sed 's/trim_paired_\(.*\)_pass_1.fastq.gz/\1/')
         reverse_read="${RAW_DATA}/trim_paired_${sample}_pass_2.fastq.gz"
-
-
-	# Reference Indexing
-	bwa index -p "${OUT_DIR}/ref_index" "${REF}" 2> "${OUT_DIR}/index.log"
-
+        echo "Processing sample: ${sample}, forward: ${forward_read}, reverse: ${reverse_read}"
 	# Alignment
 	bwa mem "${OUT_DIR}/ref_index" "${forward_read}" "${reverse_read}" | samtools sort -@ 4 -O BAM -o "${OUT_DIR}/${sample}_aligned.bam"
 
@@ -44,7 +39,7 @@ done
 # Serum
 
 RAW_DATA_Serum="/proj/uppmax2025-3-3/Genome_Analysis/1_Zhang_2017/transcriptomics_data/RNA-Seq_Serum/"
-OUT_DIR_Serum="/home/mariagad/GenomeAnalysis/data/03_Transcriptome_analyses/mapped_reads/Serum"
+OUT_DIR_Serum="/proj/uppmax2025-3-3/nobackup/mariagad/03_Transcriptome_analyses/mapped_reads/Serum"
 
 mkdir -p "${OUT_DIR_Serum}"
 
