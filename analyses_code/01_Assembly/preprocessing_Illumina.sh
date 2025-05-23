@@ -27,7 +27,7 @@ fastqc -o $OUT_RAW_FASTQC $RAW_DATA/*.fq.gz
 INPUT_FORWARD="$RAW_DATA/E745-1.L500_SZAXPI015146-56_1_clean.fq.gz"
 INPUT_REVERSE="$RAW_DATA/E745-1.L500_SZAXPI015146-56_2_clean.fq.gz"
 
-trimmomatic PE -phred33 \
+trimmomatic PE -phred33 SLIDINGWINDOW:4:15  TRAILING:3 LEADING:3 \
   -trimlog "$OUT_TRIMMED_FASTQC/trimlog.txt" \
   $INPUT_FORWARD $INPUT_REVERSE \
   "$OUT_TRIMMED/forward_paired.fq.gz" "$OUT_TRIMMED/forward_unpaired.fq.gz" \
