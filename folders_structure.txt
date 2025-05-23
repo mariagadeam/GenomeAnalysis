@@ -2,38 +2,25 @@ GenomeAnalysis
 ├── analyses_code
 │   ├── 01_Assembly
 │   │   ├── assembly_evaluations.sh
-│   │   ├── assembly_evaluation.uppmax2025-3-3.out
 │   │   ├── hybrid_assembly.sh
-│   │   ├── hybrid_assembly.uppmax2025-3-3.out
 │   │   ├── pacbio_assembly.sh
-│   │   ├── pacbio_assembly.uppmax2025-3-3.out
-│   │   ├── preprocessing_Illumina.sh
-│   │   └── processing_reads.uppmax2025-3-3.out
+│   │   └──  preprocessing_Illumina.sh
 │   ├── 02_Annotation
 │   │   ├── annotation.sh
-│   │   ├── pacbio_annotation.uppmax2025-3-3.out
 │   │   ├── sinteny_comparison.sh
 │   │   └── snp_indel_calling
-│   │       ├── bcftools_snp_calling.uppmax2025-3-3.out
 │   │       ├── extra_snp_analysis.sh
-│   │       ├── extra_snp_calling.uppmax2025-3-3.out
 │   │       ├── extra_snp_visualization.R
 │   │       ├── snp_calling.sh
-│   │       ├── snp_summary.sh
-│   │       └── snp_summary.uppmax2025-3-3.out
+│   │       └── snp_summary.sh
 │   └── 03_Transcriptome_analyses
 │       ├── differential_expression_analysis.R
 │       ├── mapping
-│       │   ├── bcftools_map_index.uppmax2025-3-3.out
-│       │   ├── count_mapped_reads.uppmax2025-3-3.out
 │       │   ├── coverage.sh
 │       │   ├── mapped_contigs.sh
 │       │   ├── mapping_indexing_RNA.sh
-│       │   ├── read_counting.sh
-│       │   ├── read_counting.uppmax2025-3-3.out
-│       │   └── read_coverage_summary.uppmax2025-3-3.out
-│       ├── preprocessing.sh
-│       └── processing_RNA.uppmax2025-3-3.out
+│       │   └──read_counting.sh
+│       └── preprocessing.sh
 ├── data
 │   ├── 01_Assembly
 │   │   ├── evaluation
